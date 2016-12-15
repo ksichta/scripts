@@ -4,14 +4,14 @@ require 'awesome_print'
 require 'bindata'
 require './itch-message.rb'
 
-itch_file = '20160527.PSX_ITCH_50'
+itch_file = ARGF.read
 i = 1
 c = 1
 n = 1
 len = ''
 data = ''
 
-File.open(itch_file, 'rb').each_byte do |b|
+itch_file.each_byte do |b|
   while i <= 2
     len << b
     i += 1
